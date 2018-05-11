@@ -16,5 +16,6 @@ public class AvarageOfInput {
         //
         // Sum: 22, Average: 4.4
         System.out.println("Sum: "+String.valueOf(sum)+" Avarage: "+String.valueOf(sum/5));
+        System.out.println(1<25);
     }
 }
