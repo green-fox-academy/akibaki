@@ -6,13 +6,16 @@ public class DrawPyramid {
         Scanner scanner = new Scanner(System.in);
         int level = scanner.nextInt();
         String line="*";
-        for (int i = 1; i < level+1 ; i++) {
-            for (int j = 0; j <level-i; j++) {
-                System.out.print(" ");
-            }
-            System.out.println(line);
-            line=line+"**";
+        String empty="";
+        for (int j = 0; j <level-1; j++) {
+            empty=empty+" ";
         }
+        for (int i = 1; i < level ; i++) {
+            System.out.println(empty+line);
+            line=line+"**";
+            empty=empty.substring(1);
+        }
+        System.out.println(line);
 
         // Write a program that reads a number from the standard input, then draws a
 // pyramid like this:
