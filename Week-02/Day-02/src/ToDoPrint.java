@@ -7,7 +7,7 @@ public class ToDoPrint {
     // Add " - Download games" to the end of the todoText
     todoText+=" - Download games\n";
     // Add " - Diablo" to the end of the todoText but with indention
-    todoText+="  - Diablo";
+    todoText+="     - Diablo";
 
     // Expected outpt:
 
