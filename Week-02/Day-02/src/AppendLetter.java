@@ -15,7 +15,7 @@ public class AppendLetter {
     }
   return input;
     }
-    
+
 
 // The output should be: "kutya", "macska", "kacsa", "róka", "halacska"
 
