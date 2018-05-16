@@ -20,6 +20,7 @@ public class WriteASingleLine {
       try {
         Files.write(path, output);
       } catch (IOException e) {
+        System.out.println("Unable to write file: my-file.txt");
         e.printStackTrace();
       }}
 }
