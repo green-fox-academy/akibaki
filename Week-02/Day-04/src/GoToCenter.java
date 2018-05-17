@@ -3,15 +3,18 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
+public class GoToCenter {
   public static void mainDraw(Graphics graphics) {
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
-    graphics.setColor(Color.red);
-    graphics.drawLine(0, 0, WIDTH, HEIGHT-23);
-    // draw a green vertical line to the canvas' middle.
-    graphics.setColor(Color.green);
-    graphics.drawLine(0, HEIGHT-23, WIDTH, 0);
+    // Create a line drawing function that takes 2 parameters:
+    // The x and y coordinates of the line's starting point
+    // and draws a line from that point to the center of the canvas.
+    // Draw 3 lines with that function. Use loop for that.
+
+    int[][] xy={{25,25},{154,25},{234,153}};
+
+    for (int i = 0; i <xy.length; i++) {
+      graphics.drawLine(xy[i][0], xy[i][1], WIDTH/2, (HEIGHT-23)/2);
+    }
 
 
 

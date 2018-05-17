@@ -7,10 +7,10 @@ public class LineInTheMiddle {
   public static void mainDraw(Graphics graphics){
     // draw a red horizontal line to the canvas' middle.
     graphics.setColor(Color.red);
-    graphics.drawLine(0, 160, 320, 160);
+    graphics.drawLine(0, (HEIGHT-23)/2, WIDTH, (HEIGHT-23)/2);
     // draw a green vertical line to the canvas' middle.
     graphics.setColor(Color.green);
-    graphics.drawLine(160, 0, 160, 320);
+    graphics.drawLine((WIDTH)/2, 0, (WIDTH)/2, (HEIGHT-23));
 
 
   }
