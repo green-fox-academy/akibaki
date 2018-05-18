@@ -8,8 +8,9 @@ public class ColoredBox {
     // Draw a box that has different colored lines on each edge.int
     int a=200;
     int b=100;
-    int x0=25;
-    int y0=25;
+    int x0=200;
+    int y0=200;
+    double alpha= 323.0;
 
     int x1 = x0;
     int y1 = y0;
@@ -18,8 +19,8 @@ public class ColoredBox {
 
 
     for (int i = 0; i <4; i++) {
-      x2=x1+(int)(Math.sin(Math.PI*i/2)*a);
-      y2=y1+(int)(Math.cos(Math.PI*i/2)*b);
+      x2=x1+(int)(Math.sin(Math.PI*i/2) * Math.cos((alpha/180)*Math.PI)*a) - (int)(Math.cos(Math.PI*i/2)*(Math.sin((alpha/180)*Math.PI)*b));
+      y2=y1+(int)(Math.cos(Math.PI*i/2) * Math.cos((alpha/180)*Math.PI)*b) + (int)(Math.sin(Math.PI*i/2)*(Math.sin((alpha/180)*Math.PI)*a));
       cc(graphics);
       graphics.drawLine(x1, y1, x2, y2);
       x1=x2;
