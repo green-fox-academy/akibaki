@@ -20,8 +20,15 @@ public class LinePlay {
       int pitch = 20;
       int size = 14;
 
+
+
+
+
+
       for (int i = 0; i != size; i++) {
-        graphics.drawLine(x0, y0-(size-i)*pitch*(int)(Math.cos((orient/180)*Math.PI)), x0+pitch * (i)*(int)(Math.cos((orient/180)*Math.PI)), y0);
+        int y1=y0-(size-i)*pitch*(int)(Math.cos((orient/180)*Math.PI));
+        int x2=x0+pitch * (i)*(int)(Math.cos((orient/180)*Math.PI));
+        graphics.drawLine(x0, y1, x2, y0);
       }
     }
 
