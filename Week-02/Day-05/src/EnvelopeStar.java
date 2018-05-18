@@ -4,7 +4,7 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class EnvelopeStar {
-  public static int n=16;
+  public static int n=19;
   public static int pitch = 15;
   public static int size = 14;
   public static int[] xy0 = new int[]{200,200};
