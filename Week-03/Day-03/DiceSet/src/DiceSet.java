@@ -37,10 +37,9 @@ public class DiceSet {
     for (int i = 0; i < dices.length; i++) {
       while (getCurrent(i)!=6){
         reroll(i);
-        System.out.println(getCurrent(i));
+        System.out.println(getCurrent(i)+"Dice " +i);
       }
     }
-    System.out.println(getCurrent().toString());
     /*
     DiceSet diceSet = new DiceSet();
     diceSet.getCurrent();
