@@ -29,8 +29,8 @@ public class Squares {
 
 
   }
-  static int WIDTH = 600;
-  static int HEIGHT = 600;
+  static int WIDTH = 729;
+  static int HEIGHT = 729;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

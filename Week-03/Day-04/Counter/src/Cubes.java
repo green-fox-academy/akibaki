@@ -6,8 +6,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Cubes {
 
   public static void mainDraw(Graphics graphics) {
-    int[]xy={300,300};
-    int level=5;
+    int[]xy={256,256};
+    int level=6;
     Hexagon (graphics, xy[0], xy[1], HEIGHT/2);
     Cubes(graphics, xy[0], xy[1], HEIGHT/4, level);
 
@@ -39,8 +39,8 @@ public class Cubes {
 
   }
 
-  static int WIDTH = 600;
-  static int HEIGHT = 600;
+  static int WIDTH = 512;
+  static int HEIGHT = 512;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
