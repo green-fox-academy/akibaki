@@ -15,7 +15,7 @@ public class String1 {
   }
 
   public static void main(String[] args) {
-    System.out.println(String1("dxll;kjh;hhxlkjggxyrfyuriutlyitfxxxxxliutyyittiyoxxx"));
+    System.out.println(String1("dxll;kjh;hhxlkjggxyrfyuriutlyitfxxxxxXXXXliutyyittiyoxxx"));
   }
   // Given a string, compute recursively (no loops) a new string where all the
 // lowercase 'x' chars have been changed to 'y' chars.
