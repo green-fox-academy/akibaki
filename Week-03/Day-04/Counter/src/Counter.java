@@ -3,11 +3,8 @@ public class Counter {
   public static int Counter(int n, int it, int sum){
     if (it <= n) {
       sum = it + Counter(n, it+1, sum);
-      return sum;
     }
-    else{
       return sum;
-    }
   }
 
   public static void main(String[] args) {
