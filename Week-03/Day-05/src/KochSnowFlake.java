@@ -37,6 +37,12 @@ public class KochSnowFlake {
         Element(graphics, xs[i], ys[i], orient2,a/3, level-1);
       }
     } else{
+      if (Math.round(Math.cos(orient) * 2) == 0.0){graphics.setColor(Color.green);}
+      if (Math.round(Math.cos(orient) * 2) == 1.0){graphics.setColor(Color.black);}
+      if (Math.round(Math.cos(orient) * 2) == 2.0){graphics.setColor(Color.blue);}
+      if (Math.round(Math.cos(orient) * 2) == - 1.0 ){graphics.setColor(Color.yellow);}
+      if (Math.round(Math.cos(orient) * 2) == - 2.0 ){graphics.setColor(Color.red);}
+
       graphics.drawLine(
               (int)(Math.round(xs[0])),
               (int)(Math.round(ys[0])),
