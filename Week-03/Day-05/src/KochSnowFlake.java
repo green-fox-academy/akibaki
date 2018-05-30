@@ -8,8 +8,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class KochSnowFlake {
 
   public static void mainDraw(Graphics graphics) {
-    int[]xy={50, 150};
-    int level=5;
+    int[]xy={50, 220};
+    int level=4;
     int a = HEIGHT / 3;
     Element (graphics, xy[0], xy[1], 0, a , level);
     Element (graphics, xy[0]+ a * 3 , xy[1], -(2  * Math.PI / 3),a, level);
@@ -54,8 +54,8 @@ public class KochSnowFlake {
 
 
 
-  static int WIDTH = 486;
-  static int HEIGHT = 486;
+  static int WIDTH = 729;
+  static int HEIGHT = 729;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

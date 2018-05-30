@@ -1,4 +1,4 @@
-public class Domino {
+public class Domino implements Comparable<Domino> {
   private final int[] values;
 
   public Domino(int valueA, int valueB) {
@@ -7,6 +7,11 @@ public class Domino {
 
   public int[] getValues() {
     return values;
+  }
+
+  @Override
+  public int compareTo(Domino o) {
+    return getValues()[0]-(o.getValues()[0]);
   }
 
   @Override

@@ -4,14 +4,13 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class EnvelopeStar {
-  public static int n=19;
-  public static int pitch = 15;
+  public static int n=28;
+  public static int pitch = 25;
   public static int size = 14;
-  public static int[] xy0 = new int[]{200,200};
+  public static int[] xy0 = new int[]{350,350};
 
 
   public static void mainDraw(Graphics graphics) {
-
 
     graphics.setColor(Color.green);
     for (int i = 0; i <n; i++) {
@@ -21,9 +20,7 @@ public class EnvelopeStar {
   }
 
   public static void nets(Graphics graphics, double orient,double anglepitch, int x0, int y0) {
-
     for (int i = 0; i != size; i++) {
-
       graphics.drawLine(
               (int)(x0-pitch*i*Math.sin(orient*Math.PI/180)),
               (int)(y0-pitch*i*Math.cos(orient*Math.PI/180)),

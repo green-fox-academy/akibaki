@@ -21,7 +21,6 @@ public class KochLine {
       double x2 = (x + dx + a * Math.cos(orient + Math.PI/3));
       double y2 = (y - dy - a * Math.sin(orient + Math.PI/3));
 
-
       double xs[] = {x ,  x + dx, x2,  x + 2 * dx, x + 3 * dx};
       double ys[] = { y ,  y - dy, y2, y - 2 * dy,  y - 3 * dy};
 

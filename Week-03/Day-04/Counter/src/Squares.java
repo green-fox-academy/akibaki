@@ -8,7 +8,7 @@ public class Squares {
   public static void mainDraw(Graphics graphics) {
     graphics.drawRect(0, 0,WIDTH, HEIGHT);
     int[]xy={0,0};
-    int level=5;
+    int level=7;
     Squares(graphics, xy[0],xy[1], HEIGHT/3, level);
 
   }
