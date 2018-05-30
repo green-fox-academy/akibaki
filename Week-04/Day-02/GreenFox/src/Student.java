@@ -1,4 +1,4 @@
-public class Student extends Person {
+public class Student extends Person implements Cloneable{
 
   private String previousOrganization;  // the name of the student’s previous company / school
   private int skippedDays;              // the number of days skipped from the course
@@ -26,6 +26,14 @@ public class Student extends Person {
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
+
+  @Override
+  protected Student clone() throws CloneNotSupportedException {
+    Student student = new Student(this.name, this.age, this.gender, this.previousOrganization);
+   return student;
+  }
+
+
 
   public Student(){
     super();
