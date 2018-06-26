@@ -12,14 +12,16 @@
             <th>Name</th>
             <th>Ballance</th>
             <th>Animaltype</th>
+            <th>Index</th>
         </tr>
         </thead>
         <tbody>
-        <div th:each="bankAccount : ${bankAccounts}" th:object="${bankAccount}">
+        <div th:each="bankAccount,iter : ${bankAccounts}" th:object="${bankAccount}">
         <tr >
             <td th:text=" *{name}"></td>
             <td th:text=" *{balance} + '0 Zebra ' "></td>
             <td th:text=" *{animalType}"></td>
+            <td th:text=" ${iter.index}"></td>
         </tr>
         </div>
         </tbody>
