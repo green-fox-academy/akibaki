@@ -30,7 +30,7 @@ public class MainController {
   public String list(Model model){
     List<BankAccount> bankAccounts = new ArrayList<BankAccount>();
     bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
-    bankAccounts.add(new BankAccount("Timon", 20, "opossum"));
+    bankAccounts.add(new BankAccount("Timon", 20, "opossum", true));
     bankAccounts.add(new BankAccount("Pumba", 200, "pig"));
     bankAccounts.add(new BankAccount("Zordon", 20000, "lion"));
     model.addAttribute("bankAccounts", bankAccounts);

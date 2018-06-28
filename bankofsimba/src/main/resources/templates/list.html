@@ -13,16 +13,25 @@
             <th>Ballance</th>
             <th>Animaltype</th>
             <th>Index</th>
+            <th>King</th>
         </tr>
         </thead>
         <tbody>
-        <div th:each="bankAccount,iter : ${bankAccounts}" th:object="${bankAccount}">
-        <tr >
-            <td th:text=" *{name}"></td>
-            <td th:text=" *{balance} + '0 Zebra ' "></td>
-            <td th:text=" *{animalType}"></td>
-            <td th:text=" ${iter.index}"></td>
-        </tr>
+        <div th:each="bankAccount : ${bankAccounts}" th:object="${bankAccount}">
+            <tr th:if="${bankAccount.isKing()}" style="color : red">
+                <td th:text=" *{name}"></td>
+                <td th:text=" *{balance} + '0 Zebra ' "></td>
+                <td th:text=" *{animalType}"></td>
+                <td th:text="${bankAccountStat.index}"></td>
+                <td th:text=" *{isKing()}"></td>
+            </tr>
+            <tr th:unless="${bankAccount.isKing()}">
+                <td th:text=" *{name}"></td>
+                <td th:text=" *{balance} + '0 Zebra ' "></td>
+                <td th:text=" *{animalType}"></td>
+                <td th:text="${bankAccountStat.index}"></td>
+                <td th:text=" *{isKing()}"></td>
+            </tr>
         </div>
         </tbody>
     </table>
