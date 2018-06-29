@@ -8,12 +8,25 @@
 <body>
 <ul>
     <li>
-<a href="/information">Information </a>
+    <a th:href="'/?name=' + *{name}">Information </a>
     </li>
+    <li>
+        <a th:href="'/login'">Log In </a>
+    </li>
+    <li>
+        <a th:href="'/nutritionStore?name=' + *{name}">Nutrition Stroe </a>
+    </li>
+    <li>
+        <a th:href="'/trickcenter?name=' + *{name}">Trick Center </a>
+    </li>
+    <li>
+    <a th:href="'/actionhistory?name=' + *{name}">Action History </a>
+</li>
 </ul>
 <img src="https://raw.githubusercontent.com/green-fox-academy/teaching-materials/master/project/programmer-fox-club/assets/greenfox.png?token=ARK7H70rB3CfbcyXnESgdEMZqRUPQqVlks5bPiBpwA%3D%3D" alt="Greenfox">
 <p th:text="'This is ' + *{name} + ', currently living on ' + *{food} + ' and ' + *{drink} + '. He knows ' + *{tricks.size()} + ' tricks.'"></p>
 <h1>Known tricks</h1>
+<p th:if="*{tricks.size()==0}">This fox does not know any tricks yet, teach him/her something.</p>
 <ul>
     <li th:each="trick : *{tricks}" th:text="${trick}"></li>
 </ul>

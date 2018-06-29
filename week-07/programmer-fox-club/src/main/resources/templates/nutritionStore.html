@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:object="${fox}">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+<meta charset="utf-8" />
+</head>
+<body>
+<ul>
+    <li>
+        <a th:href="'/?name=' + *{name}">Information </a>
+    </li>
+    <li>
+        <a th:href="'/login'">Log In </a>
+    </li>
+    <li>
+        <a th:href="'/nutritionStore?name=' + *{name}">Nutrition Stroe </a>
+    </li>
+    <li>
+        <a th:href="'/trickcenter?name=' + *{name}">Trick Center </a>
+    </li>
+    <li>
+        <a th:href="'/actionhistory?name=' + *{name}">Action History </a>
+    </li>
+</ul>
+Food:
+<select name="food" form="fooddrink">
+    <option value="Chili con Carne">Chili con Carne</option>
+    <option value="Spaghetti Bolognese">Spaghetti Bolognese</option>
+    <option value="Bread">Bread</option>
+    <option value="Yogurt">Yogurt</option>
+</select>
+Drink:
+<select name="drink" form="fooddrink" title="Drink:">
+    <option value="Coffee">Coffee</option>
+    <option value="Milk">Milk</option>
+    <option value="Water">Water</option>
+    <option value="Unicum">Unicum</option>
+</select>
+<form th:action="'/nutritionStore/' + *{name}" method="post" id="fooddrink">
+    <input type="submit" value="Change">
+</form>
+</body>
+</html>
