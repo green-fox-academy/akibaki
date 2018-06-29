@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:object="${fox}">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<ul>
+    <li>
+<a href="/information">Information </a>
+    </li>
+</ul>
+<img src="https://raw.githubusercontent.com/green-fox-academy/teaching-materials/master/project/programmer-fox-club/assets/greenfox.png?token=ARK7H70rB3CfbcyXnESgdEMZqRUPQqVlks5bPiBpwA%3D%3D" alt="Greenfox">
+<p th:text="'This is ' + *{name} + ', currently living on ' + *{food} + ' and ' + *{drink} + '. He knows ' + *{tricks.size()} + ' tricks.'"></p>
+<h1>Known tricks</h1>
+<ul>
+    <li th:each="trick : *{tricks}" th:text="${trick}"></li>
+</ul>
+</body>
+</html>
