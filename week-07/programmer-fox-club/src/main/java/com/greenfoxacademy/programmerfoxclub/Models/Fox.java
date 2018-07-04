@@ -56,3 +56,4 @@ public class Fox {
     this.tricks = tricks;
   }
 }
+
