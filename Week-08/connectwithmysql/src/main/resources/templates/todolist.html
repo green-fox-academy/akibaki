@@ -9,19 +9,26 @@
 <h1>
     Todos for Today:
 </h1>
-<ul>
-    <li>
-        Start the day
-    </li>
-    <li>
-        Finish H2 Workshop1
-    </li>
-    <li>
-        Finish JPA Workshop2
-    </li>
-    <li>
-        Create a CRUD project
-    </li>
-</ul>
+<a href="/list/add">Add new todo</a>
+<table >
+<tr>
+    <th>ID</th>
+    <th>Action</th>
+    <th>Done</th>
+    <th>Urgent</th>
+    <th>Delete</th>
+    <th>Update</th>
+
+</tr>
+    <div th:each="todo: ${todos}">
+        <tr>
+            <td th:text="${todo.id}"></td>
+            <td th:text="${todo.title}"></td>
+            <td th:text="${todo.done}"></td>
+            <td th:text="${todo.urgent}"></td>
+
+        </tr>
+    </div>
+</table>
 </body>
 </html>
