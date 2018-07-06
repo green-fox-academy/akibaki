@@ -39,14 +39,28 @@ public class TodoController {
     return "addtodo";
   }
   @PostMapping(value = {"/list/add"})
-  public String listAdded(ToDo todo) {
+  public String listAdded(@ModelAttribute ToDo todo) {
     repo.save(todo);
     return "redirect:/list";
   }
 
   @GetMapping(value = {"/{todo.id}/delete"})
-  public String deleteFromList( @PathVariable("todo.id") String id) {
-    repo.deleteById(Long.valueOf(id));
+  public String deleteFromList( @PathVariable("todo.id") long id) {
+    repo.deleteById(id);
+    return "redirect:/list";
+  }
+
+  @GetMapping(value = {"/{todo.id}/edit"})
+  public String editToDo(Model model, @PathVariable("todo.id") long id) {
+    model.addAttribute("todo", repo.findById(id).get());
+    System.out.println(repo.findById(id).get().toString());
+    return "edittodo";
+  }
+
+  @PostMapping(value = {"/{todo.id}/edit"})
+  public String editedToDo(@ModelAttribute("todo") ToDo todo, @PathVariable("todo.id") long id) {
+    System.out.println(todo.toString());
+    repo.save(todo);
     return "redirect:/list";
   }
 
