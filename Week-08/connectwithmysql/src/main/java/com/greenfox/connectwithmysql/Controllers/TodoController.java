@@ -5,13 +5,8 @@ import com.greenfox.connectwithmysql.Repository.Repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class TodoController {
@@ -48,5 +43,12 @@ public class TodoController {
     repo.save(todo);
     return "redirect:/list";
   }
+
+  @GetMapping(value = {"/{todo.id}/delete"})
+  public String deleteFromList( @PathVariable("todo.id") String id) {
+    repo.deleteById(Long.valueOf(id));
+    return "redirect:/list";
+  }
+
 }
 
