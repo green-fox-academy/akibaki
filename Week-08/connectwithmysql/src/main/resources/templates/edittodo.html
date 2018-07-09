@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>
-    Add new todo:
+    Edit todo:
 </h1>
 <form id="editToDoForm"  th:object="${todo}" th:action="'/'+${todo.id}+'/edit'" method="post">
     <input type="hidden" name = "id" th:field="*{id}">

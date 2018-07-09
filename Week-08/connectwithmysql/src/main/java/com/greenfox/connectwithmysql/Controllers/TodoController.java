@@ -20,7 +20,6 @@ public class TodoController {
     return "/todo";
   }
 
-  //@ResponseBody
   @GetMapping(value = {"", "/", "/list"})
   public String list(Model model, @RequestParam(value = "isActive", required = false) String isActive) {
 
@@ -53,13 +52,11 @@ public class TodoController {
   @GetMapping(value = {"/{todo.id}/edit"})
   public String editToDo(Model model, @PathVariable("todo.id") long id) {
     model.addAttribute("todo", repo.findById(id).get());
-    System.out.println(repo.findById(id).get().toString());
     return "edittodo";
   }
 
   @PostMapping(value = {"/{todo.id}/edit"})
-  public String editedToDo(@ModelAttribute("todo") ToDo todo, @PathVariable("todo.id") long id) {
-    System.out.println(todo.toString());
+  public String editedToDo(@ModelAttribute("todo") ToDo todo) {
     repo.save(todo);
     return "redirect:/list";
   }
