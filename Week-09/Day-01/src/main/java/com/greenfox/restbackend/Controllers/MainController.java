@@ -5,6 +5,8 @@ import com.greenfox.restbackend.Model.Error;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class MainController {
 
@@ -52,4 +54,16 @@ public class MainController {
       return new UntilResult(what, doUntil.getUntil());
     }
   }
+
+  @ResponseBody
+  @PostMapping("/arrays")
+  public Object arrays(@RequestParam ("what")String what, @RequestBody(required = false) List<Integer> numbers) {
+
+    if (numbers == null || what == null ){
+      return new Error("Please provide what to do with the numbers!");
+    } else{
+      return new arraysResult(what, numbers);
+    }
+  }
+
 }
