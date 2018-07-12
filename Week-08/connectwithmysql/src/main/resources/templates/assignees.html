@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>
+    Assignees:
+</h1>
+<a href="/">ToDos</a><br>
+<a href="/assignees/add">Add new Assignee</a><br>
+<form id="searchToDoForm"  th:action="@{/assignees}" method="get">
+    <input name = "search" type="text" class="form-search" id="search">
+    <input type="submit">
+</form>
+<table >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Delete</th>
+        <th>Edit</th>
+
+    </tr>
+    <div th:each="assignee: ${assignees}">
+        <tr>
+            <td th:text="${assignee.id}"></td>
+            <td th:text="${assignee.name}"></td>
+            <td th:text="${assignee.email}"></td>
+            <td><a th:href="'/assignees/'+${assignee.id}+'/delete'">delete</a></td>
+            <td><a th:href="'/assignees/'+${assignee.id}+'/edit'">edit</a></td>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

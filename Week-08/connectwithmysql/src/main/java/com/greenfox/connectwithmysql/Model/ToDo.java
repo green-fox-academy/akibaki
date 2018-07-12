@@ -1,35 +1,37 @@
 package com.greenfox.connectwithmysql.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ToDo {
 
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
-  long id;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  Long id;
   String title;
   boolean urgent;
   boolean done;
 
-  public ToDo(){
+  @OneToOne()
+  @JoinColumn(name = "assignee")
+  private Assignee assignee;
+
+  public ToDo() {
 
   }
 
-  public ToDo(String title){
+  public ToDo(String title) {
     this.title = title;
     urgent = false;
     done = false;
+    assignee = new Assignee("","");
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -55,5 +57,13 @@ public class ToDo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }

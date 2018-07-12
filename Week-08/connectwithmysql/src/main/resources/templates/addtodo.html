@@ -10,6 +10,7 @@
     Add new todo:
 </h1>
 <form id="addToDoForm" action="/list/add" th:object="${todo}" method="post">
+    <input type="hidden" name = "id" th:field="*{id}">
     <input type="text" class="form-control" id="title" th:field="*{title}"></input>
     <input type="submit"></input>
 </form>
