@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Please insert four numbers!</h1>
+<form th:action="@{/}"  th:method="post">
+    <input name="numbers" type="text" >
+    <input name="numbers" type="text" >
+    <input name="numbers" type="text" >
+    <input name="numbers" type="text" >
+    <input type="submit">
+</form>
+<p th:text="${message}"></p>
+<p th:if="${savedNumbers} != null" th:text="'The saved numbers are: ' + ${savedNumbers}"></p>
+<form name = "id" id="id" th:action="@{/sumsquare}" method="post">
+    <select name = "id">
+        <option th:each="numbers:${allNumbers}" th:value="${numbers.getId()}" th:text="${numbers.getId()}"> </option>
+    </select>
+    <input type="submit">
+</form>
+<p th:text="${othermessage}"></p>
+</body>
+</html>
