@@ -1,2 +1,2 @@
-# akibaki
-https://github.com/akibaki/todo-app.git
+# beinrep
+https://github.com/beinrep/todo-app.git
